@@ -11,18 +11,3 @@ toDoApp.controller('ToDoController', ['ToDoFactory', function(ToDoFactory) {
     self.todos.pop();
   }
 }]);
-
-
-toDoApp.factory('ToDoFactory', function() {
-  var Todo = function(todoText){
-    this.text = todoText;
-    this.completed = (typeof completed !== 'undefined') ? completed : false;
-  };
-  return Todo;
-});
-
-Todo.prototype.complete = function() {
-    this.completed = true;
-  };
-  return Todo;
-});
