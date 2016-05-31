@@ -9,8 +9,14 @@
   <link rel="stylesheet" href="todo.css">
 </head>
 <body>
-  <div ng-controller="ToDoController as controller">
-    {{ controller.todoList }}
+  <div ng-controller="ToDoController as controller" >
+    <li ng-repeat="todo in controller.todos">
+      {{ todo.text }}: {{ todo.completed ? "Completed" : "Not completed"}}
+    </li>
+    <input type="text" ng-model="todo">
+    <button ng-click="controller.addToDo(todo)">Add to do</button>
+    <button ng-click="controller.removeToDo(todo)">Remove last to do</button>
+
   </div>
 </body>
 </html>
